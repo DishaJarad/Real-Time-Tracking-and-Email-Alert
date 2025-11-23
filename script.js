@@ -6,13 +6,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 const sourceIcon = L.icon({
-  iconUrl: 'images/bike.png',
+  iconUrl: 'bike.png',
   iconSize: [32, 32],
   iconAnchor: [16, 32],
 });
 
 const destinationIcon = L.icon({
-  iconUrl: 'images/flag.png',
+  iconUrl: 'flag.png',
   iconSize: [32, 32],
   iconAnchor: [16, 32],
 });
@@ -77,8 +77,8 @@ function sendEmailAlert(currentCoords) {
   const mapUrl = `https://www.openstreetmap.org/?mlat=${currentCoords[0]}&mlon=${currentCoords[1]}#map=16/${currentCoords[0]}/${currentCoords[1]}`;
 
   const emailData = {
-    sender: { name: "BHARAT POST", email: "drjarad11@gmail.com" },
-    to: [{ email: "drjarad11@gmail.com", name: "Receiver" }],
+    sender: { name: "BHARAT POST", email: "abc@gmail.com" },
+    to: [{ email: "abc@gmail.com", name: "Receiver" }],
     subject: "!!!Track your Post!!!",
     htmlContent: `
       <p>The tracker is now within 2KM of the destination.</p>
@@ -91,7 +91,7 @@ function sendEmailAlert(currentCoords) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "api-key": "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", // Replace with your actual Sendinblue API key
+      "api-key": "xkeysib-ffe43fe5158e442fdaca7b73ef10038d3aa422000ed1cec7e7c9b718441d87ba-5o702FdyQbFP3VXad", 
     },
     body: JSON.stringify(emailData),
   })
@@ -123,4 +123,5 @@ if ('geolocation' in navigator) {
   );
 } else {
   alert('Geolocation is not supported by your browser.');
+
 }
